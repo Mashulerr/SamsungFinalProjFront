@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/blue_blurry_background" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/tv_create_article"
+                    style="@style/h4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="135dp"
+                    android:gravity="center"
+                    android:text="@string/title_create_article"
+                    android:textAlignment="center"
+                    android:textSize="35sp"
+                    app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_cheer_title"
+                    style="@style/h2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/cheer_title"
+                    android:textAlignment="center"
+                    android:textColor="@color/g_blue"
+                    app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
+                    app:layout_constraintTop_toBottomOf="@id/tv_create_article" />
+
+                <EditText
+                    android:id="@+id/et_article_title"
+                    style="@style/editText"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edittextHeight"
+                    android:layout_marginTop="50dp"
+                    android:hint="@string/title_hint"
+                    android:inputType="text"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
+                    app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
+                    app:layout_constraintTop_toBottomOf="@id/tv_cheer_title" />
+
+                <EditText
+                    android:id="@+id/et_article_content"
+                    style="@style/editText"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edittextHeight"
+                    android:layout_marginTop="15dp"
+                    android:hint="@string/content_hint"
+                    android:inputType="textLongMessage"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
+                    app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
+                    app:layout_constraintTop_toBottomOf="@id/et_article_title" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/create"
+                    style="@style/blueButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edittextHeight"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/save"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
+                    app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
+                    app:layout_constraintTop_toBottomOf="@id/et_article_content" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineLoginLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.09" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineLoginRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.91" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>
