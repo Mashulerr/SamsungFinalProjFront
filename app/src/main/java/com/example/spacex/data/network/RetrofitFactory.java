@@ -49,7 +49,7 @@ public class RetrofitFactory {
             .build();
 
     private final Retrofit retrofitUser = new Retrofit.Builder()
-            .baseUrl("http://192.168.0.49:8080/")
+            .baseUrl("http://192.168.1.17:8080/")
             .client(client.build())
             .addConverterFactory(GsonConverterFactory.create())
             .build();

@@ -99,7 +99,6 @@ public class UpdateProfileViewModel extends ViewModel {
         String finalEmail = (newEmail == null || newEmail.isEmpty()) ? currentUser.getEmail() : newEmail;
         String finalPhone = (newPhone == null || newPhone.isEmpty()) ? currentUser.getPhone() : newPhone;
         String finalUsername = currentUser.getUsername();
-
         String finalPhotoUrl = (newPhotoUrl != null) ? newPhotoUrl : existingPhotoUrl;
 
         if (finalUsername == null || finalUsername.isEmpty()) {

@@ -46,9 +46,7 @@ public class MainActivity extends AppCompatActivity implements MyNavigator {
             }
         });
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.mapFragment) {
-                navController.navigate(R.id.mapFragment);
-            }
+
             if (item.getItemId() == R.id.profileFragment) {
                 navController.navigate(R.id.profileFragment);
             }

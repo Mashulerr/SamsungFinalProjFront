@@ -76,11 +76,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/mapFragment"
-        android:name="com.example.spacex.ui.map.MapFragment"
-        android:label="MapFragment"
-        tools:layout="@layout/fragment_map"/>
-    <fragment
         android:id="@+id/launchListFragment"
         android:name="com.example.spacex.ui.launches_list.LaunchListFragment"
         android:label="LaunchListFragment"
