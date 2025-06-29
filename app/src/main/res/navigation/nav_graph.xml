@@ -5,11 +5,12 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/loginFragment">
     <fragment
-        android:id="@+id/fragment_list"
+        android:id="@+id/eventListFragment"
         android:name="com.example.spacex.ui.events_list.EventListFragment"
         android:label="EventsList"
         tools:layout="@layout/fragment_events_list">
-        <action
+
+    <action
             android:id="@+id/action_eventListFragment_to_eventFragment"
             app:destination="@id/eventFragment" />
     </fragment>
@@ -33,8 +34,10 @@
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_fragment_list"
-            app:destination="@id/fragment_list" />
+            android:id="@+id/action_loginFragment_to_eventListFragment"
+            app:destination="@id/eventListFragment" />
+
+
     </fragment>
 
     <fragment android:id="@+id/registerFragment"

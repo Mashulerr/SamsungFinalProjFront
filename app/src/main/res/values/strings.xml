@@ -44,4 +44,5 @@
     <string name="no_information_available">No information available</string>
     <string name="status_success">Success</string>
     <string name="status_failed">Failed</string>
+    <string name="title_delete">Delete</string>
 </resources>

@@ -14,6 +14,9 @@ import com.example.spacex.databinding.FragmentEventsListBinding;
 import com.example.spacex.ui.event.EventFragment;
 import com.example.spacex.ui.utils.Utils;
 
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
 public class EventListFragment extends Fragment {
 
     private FragmentEventsListBinding binding;
@@ -48,7 +51,10 @@ public class EventListFragment extends Fragment {
 
             binding.error.setText(state.getErrorMessage());
             if (isSuccess) {
-                adapter.updateData(state.getItems());
+                adapter.updateData(new ArrayList<>(state.getItems()).stream()
+                        .sorted((e1, e2) -> e2.getDataUtc().compareTo(e1.getDataUtc()))
+                        .collect(Collectors.toList()));
+
             }
         });
     }

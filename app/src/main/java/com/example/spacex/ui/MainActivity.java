@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements MyNavigator {
         navController = Navigation.findNavController(this, R.id.root);
         navController = NavHostFragment.findNavController(getSupportFragmentManager().getFragments().get(0));
 
-
         NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
 
         navController.addOnDestinationChangedListener((navController1, navDestination, bundle) -> {
@@ -45,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements MyNavigator {
                 binding.bottomNavigationView.setVisibility(View.VISIBLE);
             }
         });
+
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
             if (item.getItemId() == R.id.profileFragment) {
@@ -54,14 +54,13 @@ public class MainActivity extends AppCompatActivity implements MyNavigator {
                 navController.navigate(R.id.articlesListFragment);
             }
             if (item.getItemId() == R.id.eventListFragment) {
-                navController.navigate(R.id.fragment_list);
+                navController.navigate(R.id.eventListFragment);
             }
             if (item.getItemId() == R.id.launchListFragment) {
                 navController.navigate(R.id.launchListFragment);
             }
             return true;
         });
-
     }
 
     @Override
@@ -73,4 +72,11 @@ public class MainActivity extends AppCompatActivity implements MyNavigator {
         navController.navigate(R.id.loginFragment);
     }
 
+
+    @Override
+    public void onBackPressed() {
+        if (!navController.popBackStack()) {
+            super.onBackPressed();
+        }
+    }
 }

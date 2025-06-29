@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel;
 import com.example.spacex.data.repository.ArticleRepositoryImpl;
 import com.example.spacex.data.repository.FavouritesRepositoryImpl;
 import com.example.spacex.data.repository.ReactionRepositoryImpl;
+import com.example.spacex.domain.article.DeleteArticleUseCase;
 import com.example.spacex.domain.article.GetArticleByIdUseCase;
 import com.example.spacex.domain.entity.FullArticleEntity;
 import com.example.spacex.domain.entity.ReactionEntity;
@@ -34,6 +35,9 @@ public class ArticleViewModel extends ViewModel {
     public LiveData<Boolean> getIsFavouriteLiveData() {
         return isFavouriteLiveData;
     }
+
+    private final MutableLiveData<Void> mutableOpenArticleLiveData = new MutableLiveData<>();
+    public final LiveData<Void> openArticlesList = mutableOpenArticleLiveData;
 
     private String currentArticleId;
     private String currentReactionId;
@@ -61,6 +65,10 @@ public class ArticleViewModel extends ViewModel {
 
     private final GetReactionByIdUseCase getReactionByIdUseCase = new GetReactionByIdUseCase(
             ReactionRepositoryImpl.getInstance()
+    );
+
+    private final DeleteArticleUseCase deleteArticleUseCase = new DeleteArticleUseCase(
+            ArticleRepositoryImpl.getInstance()
     );
     //* UseCases *//
 
@@ -199,6 +207,8 @@ public class ArticleViewModel extends ViewModel {
             });
         }
     }
+
+
 
     public static class State {
         @Nullable

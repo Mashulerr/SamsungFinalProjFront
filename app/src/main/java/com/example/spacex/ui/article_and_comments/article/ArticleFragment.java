@@ -116,6 +116,8 @@ public class ArticleFragment extends Fragment {
         });
     }
 
+
+
     @Override
     public void onDestroyView() {
         binding = null;

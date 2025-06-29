@@ -86,7 +86,8 @@ public class LoginFragment extends Fragment {
     private void openEvents() {
         final View view = getView();
         if (view == null) return;
-        Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_fragment_list);
+        Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_eventListFragment);
+
     }
 
     private void loadUserData() {

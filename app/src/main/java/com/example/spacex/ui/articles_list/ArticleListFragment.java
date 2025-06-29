@@ -13,9 +13,14 @@ import androidx.navigation.Navigation;
 
 import com.example.spacex.R;
 import com.example.spacex.databinding.FragmentArticlesListBinding;
+import com.example.spacex.domain.entity.ItemArticleEntity;
 import com.example.spacex.ui.article_and_comments.SharedScreenFragment;
 import com.example.spacex.ui.articles_list.factory.ArticleListViewModelFactory;
 import com.example.spacex.ui.utils.Utils;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class ArticleListFragment extends Fragment {
 
@@ -73,7 +78,9 @@ public class ArticleListFragment extends Fragment {
             binding.error.setText(state.getErrorMessage());
 
             if (isSuccess) {
-                adapter.updateData(state.getItems());
+                List<ItemArticleEntity> reversed = new ArrayList<>(state.getItems());
+                Collections.reverse(reversed);
+                adapter.updateData(reversed);
             }
         });
         viewModel.getIsFavouriteLiveData().observe(getViewLifecycleOwner(), isFavourite -> adapter.notifyDataSetChanged());

@@ -11,8 +11,13 @@ import androidx.navigation.Navigation;
 
 import com.example.spacex.R;
 import com.example.spacex.databinding.FragmentLaunchesListBinding;
+import com.example.spacex.domain.entity.ItemLaunchEntity;
 import com.example.spacex.ui.launch.LaunchFragment;
 import com.example.spacex.ui.utils.Utils;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class LaunchListFragment extends Fragment {
 
@@ -48,8 +53,11 @@ public class LaunchListFragment extends Fragment {
 
             binding.error.setText(state.getErrorMessage());
             if (isSuccess) {
-                adapter.updateData(state.getItems());
+                List<ItemLaunchEntity> reversed = new ArrayList<>(state.getItems());
+                Collections.reverse(reversed);
+                adapter.updateData(reversed);
             }
+
         });
     }
 
