@@ -44,15 +44,19 @@
 
         <TextView
             android:id="@+id/article_title"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_light"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/user_nickname"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/user_nickname"
+            android:maxLines="2"
+            android:ellipsize="end"
             tools:text="Dragon crew ship was deployed" />
+
 
         <ImageButton
             android:id="@+id/like_button"

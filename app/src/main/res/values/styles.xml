@@ -89,4 +89,11 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="FixedHeadlineText" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+    </style>
+
 </resources>

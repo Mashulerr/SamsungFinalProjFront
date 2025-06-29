@@ -42,4 +42,6 @@
     <string name="hint_phone">Phone</string>
     <string name="add_comment">Add comment</string>
     <string name="no_information_available">No information available</string>
+    <string name="status_success">Success</string>
+    <string name="status_failed">Failed</string>
 </resources>

@@ -27,17 +27,21 @@
 
         <TextView
             android:id="@+id/tv_mission_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_light"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/image_mission"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/image_mission"
             tools:text="FalconSat" />
+
+
 
         <TextView
             android:id="@+id/tv_launch_year"
@@ -48,7 +52,7 @@
             android:textColor="@color/white"
             android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@id/tv_title_launch_year"
-            app:layout_constraintTop_toBottomOf="@id/tv_mission_name"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_title_launch_year"
             tools:text="2020" />
 
         <TextView
@@ -60,7 +64,8 @@
             android:textColor="@color/g_white"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="@id/tv_mission_name"
-            app:layout_constraintTop_toBottomOf="@id/tv_mission_name" />
+            app:layout_constraintTop_toBottomOf="@id/tv_mission_name"
+            android:layout_marginTop="8dp" />
 
         <TextView
             android:id="@+id/tv_rocket_name"
@@ -72,7 +77,7 @@
             android:textColor="@color/white"
             android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@id/tv_title_rocket_name"
-            app:layout_constraintTop_toBottomOf="@id/tv_title_launch_year"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_title_rocket_name"
             tools:text="Falcon1" />
 
         <TextView
@@ -86,6 +91,7 @@
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="@id/tv_title_launch_year"
             app:layout_constraintTop_toBottomOf="@id/tv_title_launch_year" />
+
 
         <TextView
             android:id="@+id/tv_status"

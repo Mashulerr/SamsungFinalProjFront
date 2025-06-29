@@ -1,11 +1,13 @@
 package com.example.spacex.ui.launches_list;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.spacex.R;
 import com.example.spacex.databinding.ItemLaunchBinding;
 import com.example.spacex.domain.entity.ItemLaunchEntity;
 import com.squareup.picasso.Picasso;
@@ -21,7 +23,9 @@ public class LaunchListAdapter extends RecyclerView.Adapter<LaunchListAdapter.Vi
 
     private final List<ItemLaunchEntity> data = new ArrayList<>();
 
+
     public LaunchListAdapter(@NonNull Consumer<String> onItemClick) {
+
         this.onItemClick = onItemClick;
     }
 
@@ -66,7 +70,11 @@ public class LaunchListAdapter extends RecyclerView.Adapter<LaunchListAdapter.Vi
             binding.tvMissionName.setText(item.getMissionName());
             binding.tvLaunchYear.setText(item.getLaunchYear());
             binding.tvRocketName.setText(item.getRocketName());
-            binding.tvStatus.setText(item.isSuccess() ? "Success" : "Failed");
+            Context context = binding.getRoot().getContext();
+
+            binding.tvStatus.setText(item.isSuccess()
+                    ? context.getString(R.string.status_success)
+                    : context.getString(R.string.status_failed));
             if (item.getMissionPatch() != null) {
                 Picasso.get().load(item.getMissionPatch()).into(binding.imageMission);
             }

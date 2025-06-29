@@ -83,15 +83,21 @@
                 <TextView
                     android:id="@+id/article_title"
                     style="@style/h2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_light"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@id/user_nickname"
-                    app:layout_constraintTop_toBottomOf="@id/user_nickname"
-                    tools:text="Dragon crew ship was deployed" />
+                    android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:lineSpacingExtra="4sp"
+                android:includeFontPadding="false"
+                app:layout_constraintStart_toStartOf="@id/user_nickname"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/user_nickname"
+                app:layout_constraintWidth_default="wrap"
+                tools:text="Dragon crew ship was deployed" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

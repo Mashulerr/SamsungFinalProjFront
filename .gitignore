@@ -14,3 +14,4 @@
 .externalNativeBuild
 .cxx
 local.properties
+app/src/main/java/com/example/spacex/ui/service/CloudinaryConfig.java
