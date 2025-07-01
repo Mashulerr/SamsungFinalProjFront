@@ -40,6 +40,8 @@
             android:id="@+id/constraintParent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="41dp">
 
@@ -144,9 +146,11 @@
                 android:id="@+id/linear_details"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="16dp"
+                android:padding="12dp"
                 android:background="@drawable/box_background"
                 android:orientation="vertical"
+
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toBottomOf="@id/tv_personal_details">
@@ -212,9 +216,10 @@
                 android:id="@+id/linear_favourites"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="24dp"
                 android:background="@drawable/box_background"
                 android:orientation="vertical"
+                android:padding="12dp"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toBottomOf="@id/linear_details">
@@ -272,9 +277,10 @@
                 android:id="@+id/linear_logout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="24dp"
                 android:background="@drawable/box_background"
                 android:orientation="vertical"
+                android:padding="12dp"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toBottomOf="@id/tv_regional">

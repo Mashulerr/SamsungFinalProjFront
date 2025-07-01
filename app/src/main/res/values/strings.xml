@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MySpace</string>
+    <string name="app_name">FreeSpace</string>
     <string name="login_title">Lets Login</string>
     <string name="username_hint">Username</string>
     <string name="password_hint">Password</string>
