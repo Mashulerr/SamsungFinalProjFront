@@ -7,6 +7,7 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,6 +21,7 @@ public class MapFragment extends Fragment {
     private SolarSystemRenderer renderer;
     private ScaleGestureDetector scaleDetector;
     private float previousX, previousY;
+    private ProgressBar progressBar;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,9 +33,16 @@ public class MapFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        progressBar = binding.progressBar;
         glSurfaceView = binding.glSurfaceView;
         glSurfaceView.setEGLContextClientVersion(2);
         renderer = new SolarSystemRenderer(requireContext());
+
+
+        renderer.setOnRendererReadyListener(() -> {
+            requireActivity().runOnUiThread(() -> progressBar.setVisibility(View.GONE));
+        });
+
         glSurfaceView.setRenderer(renderer);
         glSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
 

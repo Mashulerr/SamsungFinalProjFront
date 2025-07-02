@@ -4,8 +4,7 @@ package com.example.spacex.ui.map;
 import android.opengl.GLES32;
 
 public class CelestialBody {
-    private float[] modelMatrix = new float[16];
-    private float radius;
+
     private Sphere sphere;
     private int textureId;
     private float[] emissionColor;
@@ -14,7 +13,6 @@ public class CelestialBody {
     private int shaderProgram;
 
     public CelestialBody(float radius, int textureId, float[] emissionColor) {
-        this.radius = radius;
         this.textureId = textureId;
         this.emissionColor = emissionColor;
         this.sphere = new Sphere(radius, 32, 32);
@@ -45,7 +43,7 @@ public class CelestialBody {
                         "    float edge = clamp(uSelectionPulse - length(vTexCoord - vec2(0.5)), 0.0, 1.0);" +
                         "    texColor.rgb = mix(texColor.rgb, vec3(1.0), edge * 0.7);" +
                         "  }" +
-                        "  texColor.rgb += uEmissionColor.rgb * uEmissionColor.a;" +
+                        "  texColor.rgb += vec3(0.0);" +
                         "  gl_FragColor = texColor;" +
                         "}";
 
@@ -86,17 +84,6 @@ public class CelestialBody {
         if (!selected) selectionPulse = 0f;
     }
 
-    public float[] getPositionWorld() {
-        return new float[]{modelMatrix[12], modelMatrix[13], modelMatrix[14]};
-    }
-
-    public void setModelMatrix(float[] matrix) {
-        System.arraycopy(matrix, 0, modelMatrix, 0, 16);
-    }
-
-    public float getRadius() {
-        return radius;
-    }
 
     private int loadShader(int type, String shaderCode) {
         int shader = GLES32.glCreateShader(type);

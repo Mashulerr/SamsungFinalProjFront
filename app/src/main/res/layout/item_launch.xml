@@ -20,7 +20,7 @@
             android:id="@+id/image_mission"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -44,7 +44,6 @@
             app:layout_constraintTop_toTopOf="@id/image_mission"
             tools:text="FalconSat" />
 
-
         <TextView
             android:id="@+id/tv_title_launch_year"
             android:layout_width="wrap_content"
@@ -56,7 +55,6 @@
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="@id/tv_mission_name"
             app:layout_constraintTop_toBottomOf="@id/tv_mission_name" />
-
 
         <TextView
             android:id="@+id/tv_launch_year"
@@ -70,7 +68,6 @@
             app:layout_constraintBaseline_toBaselineOf="@id/tv_title_launch_year"
             tools:text="2020" />
 
-
         <TextView
             android:id="@+id/tv_title_rocket_name"
             android:layout_width="wrap_content"
@@ -83,25 +80,27 @@
             app:layout_constraintStart_toStartOf="@id/tv_title_launch_year"
             app:layout_constraintTop_toBottomOf="@id/tv_title_launch_year" />
 
-
         <TextView
             android:id="@+id/tv_rocket_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_marginEnd="16dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/sf_pro_display"
             android:textColor="@color/white"
             android:textSize="15sp"
+            android:maxLines="1"
+            android:ellipsize="end"
             app:layout_constraintStart_toEndOf="@id/tv_title_rocket_name"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBaseline_toBaselineOf="@id/tv_title_rocket_name"
-            tools:text="Falcon1" />
-
+            tools:text="Falcon1 Falcon Heavy Very Long Name" />
 
         <TextView
             android:id="@+id/tv_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="-8dp"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/sf_pro_display"
             android:textColor="@color/g_white"
@@ -109,6 +108,7 @@
             app:layout_constraintStart_toStartOf="@id/image_mission"
             app:layout_constraintTop_toBottomOf="@id/image_mission"
             tools:text="Success" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

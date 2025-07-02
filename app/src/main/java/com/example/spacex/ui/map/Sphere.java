@@ -12,23 +12,17 @@ public class Sphere {
     private FloatBuffer textureCoordBuffer;
     private FloatBuffer normalBuffer;
     private ShortBuffer indexBuffer;
-
-    private int stacks;
-    private int slices;
     private int numIndices;
 
-    // Константы для координат
+
     private final int COORDS_PER_VERTEX = 3;
     private final int TEXCOORDS_PER_VERTEX = 2;
 
-    // Шаги (stride) для вершин и текстурных координат
+
     private final int vertexStride = COORDS_PER_VERTEX * 4;
     private final int texCoordStride = TEXCOORDS_PER_VERTEX * 4;
 
     public Sphere(float radius, int stacks, int slices) {
-        this.stacks = stacks;
-        this.slices = slices;
-
 
         float[] vertices = new float[(stacks + 1) * (slices + 1) * 3];
         float[] texCoords = new float[(stacks + 1) * (slices + 1) * 2];

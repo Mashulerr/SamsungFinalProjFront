@@ -52,17 +52,21 @@
                     android:id="@+id/edit_content"
                     style="@style/editText"
                     android:layout_width="0dp"
-                    android:layout_height="25dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:scrollHorizontally="false"
+                    android:overScrollMode="ifContentScrolls"
                     android:layout_marginStart="15dp"
                     android:layout_marginEnd="15dp"
                     android:background="@drawable/edit_text_rounded_corners_background"
                     android:hint="@string/add_comment"
                     android:imeOptions="actionDone"
-                    android:inputType="text"
+                    android:inputType="textMultiLine"
                     app:layout_constraintBottom_toBottomOf="@id/user_avatar"
                     app:layout_constraintEnd_toStartOf="@id/send"
                     app:layout_constraintStart_toEndOf="@id/user_avatar"
                     app:layout_constraintTop_toTopOf="@id/user_avatar" />
+
 
                 <ImageView
                     android:id="@+id/send"
